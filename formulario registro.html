@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CiberShield - Registro</title>
+  <link rel="stylesheet" href="./css/formulario registro.css">
+</head>
+<body>
+
+  <header>
+      <!-- Selector de Idiomas a la Derecha con Chino y Ruso -->
+      <div class="rincon-castigo" style="position: absolute; top: 15px; right: 20px; z-index: 1000;">
+        <select id="selector-idioma" onchange="cambiarIdioma(this.value)" style="background-color: #0b192c; color: #ffffff; border: 2px solid #ffd700; padding: 6px 12px; border-radius: 6px; font-family: Arial, sans-serif; font-weight: bold; font-size: 13px; cursor: pointer; outline: none;">
+          <option value="es" style="background-color: #0b192c; color: #ffffff;">Español</option>
+          <option value="qu" style="background-color: #0b192c; color: #ffffff;">Quechua</option>
+          <option value="en" style="background-color: #0b192c; color: #ffffff;">English</option>
+          <option value="zh" style="background-color: #0b192c; color: #ffffff;">Chino</option>
+          <option value="ru" style="background-color: #0b192c; color: #ffffff;">Ruso</option>
+          <option value="de" style="background-color: #0b192c; color: #ffffff;">Alemán</option>
+          <option value="fr" style="background-color: #0b192c; color: #ffffff;">Francés</option>
+          <option value="ca" style="background-color: #0b192c; color: #ffffff;">Catalán</option>
+          <option value="ja" style="background-color: #0b192c; color: #ffffff;">Japonés</option>
+          <option value="ko" style="background-color: #0b192c; color: #ffffff;">Coreano</option>
+        </select>
+      </div>
+    
+    <div class="nav-container">
+      <div class="logo-box">
+        <div class="logo-icon"><img src="img/logo-cibershelf.png" alt=""></div>
+        <span class="logo-text" data-i18n="logo_texto">CIBERSHIELD</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" data-i18n="menu_inicio">INICIO</a></li>
+          <li><a href="catalogo.html" data-i18n="menu_catalogo">CATÁLOGO</a></li>
+          <li><a href="servicios.html" data-i18n="menu_servicios">SERVICIOS</a></li>
+          <li><a href="nosotros.html" data-i18n="menu_nosotros">NOSOTROS</a></li>
+          <li><a href="contacto.html" data-i18n="menu_contacto">CONTACTO</a></li>
+          <li><a href="formulario registro.html" class="active" data-i18n="menu_registro">REGISTRO</a></li>
+          <li><a href="login.html" data-i18n="menu_login">INICIAR SESIÓN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-container">
+      <!-- Sección Superior: Formulario -->
+      <section class="contact-form">
+        <h2 data-i18n="reg_tit">REGISTRO DE USUARIO</h2>
+        
+        <form id="registerForm">
+            <fieldset>
+                <legend data-i18n="reg_leyenda">Crear una cuenta nueva</legend>
+                
+                <div class="form-group">
+                    <label for="reg_nombre" data-i18n="reg_nom">Nombre Completo:</label>
+                    <input type="text" id="reg_nombre" name="reg_nombre" placeholder="Escribe tu nombre" data-i18n="reg_ph_nombre" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg_email" data-i18n="reg_correo">Correo Electrónico:</label>
+                    <input type="email" id="reg_email" name="reg_email" placeholder="ejemplo@correo.com" data-i18n="reg_ph_correo" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg_pass" data-i18n="reg_pass">Contraseña:</label>
+                    <input type="password" id="reg_pass" name="reg_pass" placeholder="Crea una contraseña" data-i18n="reg_ph_pass" required />
+                </div>
+                
+                <div class="form-group">
+                    <label class="group-title" data-i18n="reg_gen">Género:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" id="reg_fem" name="reg_genero" value="femenino"/>
+                            <span data-i18n="reg_fem">Femenino</span>
+                        </label>
+                        
+                        <label class="radio-label">
+                            <input type="radio" id="reg_masc" name="reg_genero" value="masculino"/>
+                            <span data-i18n="reg_masc">Masculino</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <input type="submit" value="Registrarse" class="btn" data-i18n="reg_btn_1"/>
+                    <input type="reset" value="Limpiar" class="btn" data-i18n="reg_btn_2"/>
+                </div>
+
+                <div id="mensaje" style="text-align: center; margin-top: 15px; font-weight: bold; font-size: 1.1rem;"></div>
+            </fieldset>
+        </form>
+      </section>
+
+      <!-- Sección Inferior: Redes Sociales -->
+      <section class="social-section">
+        <h2 data-i18n="reg_redes_tit">REDES SOCIALES</h2>
+        <div class="social-grid">
+          <div class="social-item">
+            <div class="social-card">
+              <a href="https://www.instagram.com/cibershield_1?rpxt=MTVqbXA1YTRxcGNlaQ==" target="_blank" rel="noopener noreferrer">
+                <img src="img/IG.jpg" alt="Instagram CiberShield">
+              </a>
+            </div>
+            <span class="social-name">INSTAGRAM</span>
+          </div>
+
+          <div class="social-item">
+            <div class="social-card">
+              <a href="https://www.facebook.com/profile.php?id=61595307254407&sk=about" target="_blank" rel="noopener noreferrer">
+                <img src="img/FB.jpg" alt="Facebook CiberShield">
+              </a>
+            </div>
+            <span class="social-name">FACEBOOK</span>
+          </div>
+
+          <div class="social-item">
+            <div class="social-card">
+              <a href="https://x.com/CIBERSHIEL_1" target="_blank" rel="noopener noreferrer">
+                <img src="img/X.jpg" alt="X CiberShield">
+              </a>
+            </div>
+            <span class="social-name">X</span>
+          </div>
+
+          <div class="social-item">
+            <div class="social-card">
+              <a href="https://www.tiktok.com/@cibershield07" target="_blank" rel="noopener noreferrer">
+                <img src="img/tiktok.jpg" alt="TikTok CiberShield">
+              </a>
+            </div>
+            <span class="social-name">TIKTOK</span>
+          </div>
+        </div>
+
+        <div class="phone-container">
+          <img src="img/WSP.jpg" alt="Teléfono" class="phone-icon">
+          <span class="phone-text">+51 951 108 456</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p data-i18n="footer_texto">&copy; 2026 CiberShield · Lima, Perú</p>
+  </footer>
+
+  <!-- CDN de Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    const SUPABASE_URL = 'https://ssosstgiclvshilkqksf.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_cZvL38ywN6K6aIe2JV0Mqw_jWcFth4N';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let supabaseClient = null;
+        if (typeof window.supabase !== 'undefined') {
+            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        } else {
+            console.error('Error: La librería de Supabase no se cargó.');
+            return;
+        }
+
+        const regForm = document.getElementById('registerForm');
+
+        if (regForm) {
+            regForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); 
+                
+                const name = document.getElementById('reg_nombre').value.trim();
+                const email = document.getElementById('reg_email').value.trim();
+                const password = document.getElementById('reg_pass').value.trim();
+                
+                // Obtener género seleccionado
+                const generoRadio = document.querySelector('input[name="reg_genero"]:checked');
+                const genero = generoRadio ? generoRadio.value : '';
+
+                const mensajeDiv = document.getElementById('mensaje');
+                mensajeDiv.style.color = '#ffd644';
+                mensajeDiv.textContent = 'Procesando registro...';
+
+                try {
+                    // Inserción directa en la tabla de Supabase 'inicio sesiòn'
+                    const { data, error } = await supabaseClient
+                        .from('inicio sesiòn') 
+                        .insert([
+                            {
+                                "nombre completo": name,
+                                "correo electronico": email,
+                                "contraseña": password,
+                                "genero": genero
+                            }
+                        ]);
+
+                    if (error) {
+                        console.error('Error en Supabase:', error);
+                        mensajeDiv.style.color = '#ff4c4c';
+                        mensajeDiv.textContent = 'Error al registrar: ' + error.message;
+                    } else {
+                        mensajeDiv.style.color = '#4ade80';
+                        mensajeDiv.textContent = '¡Registro exitoso! Redirigiendo...';
+                        
+                        // Guardar nombre localmente para la vista del perfil
+                        localStorage.setItem('cs_username', name);
+                        localStorage.setItem('userName', name);
+                        
+                        regForm.reset();
+                        
+                        setTimeout(() => {
+                            window.location.href = 'usuario.html'; 
+                        }, 1500);
+                    }
+                } catch (error) {
+                    console.error('Error de red:', error);
+                    mensajeDiv.style.color = '#ff4c4c';
+                    mensajeDiv.textContent = 'Error de conexión con la base de datos.';
+                }
+            });
+        }
+    });
+  </script>
+  </script>
+  <script src="./js/efectos.js"></script>
+  <script src="./js/chatboot.js"></script>
+  <script src="./js/carrito.js"></script>
+  <script src="./js/traductor.js"></script>
+</body>
+</html>
